@@ -1,0 +1,62 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Task4_14.MainWindow"
+        Title="Task4_14">
+        <Grid>
+                <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Margin="5"
+                            HorizontalAlignment="Stretch">
+                        <TextBlock Text="Создание объекта армии-родителя"
+                                   Background="Gray"
+                                   TextAlignment="Center"></TextBlock>
+                        <TextBlock TextAlignment="Center">Введите вид войск</TextBlock>
+                        <TextBox Name="armyParentKind" Text=""></TextBox>
+                        <TextBlock TextAlignment="Center">Введите численность войск</TextBlock>
+                        <TextBox Name="armyParentCount" Text=""></TextBox>
+                        <TextBlock TextAlignment="Center">Введите вооруженность войск</TextBlock>
+                        <TextBox Name="armyParentArmament" Text=""></TextBox>
+                        <Button Name="createArmyParentBtn"
+                                HorizontalAlignment="Stretch" 
+                                HorizontalContentAlignment="Center"
+                                Click="CreateArmyParentBtn_OnClick">Создать</Button>
+                        <TextBlock Name="parentListLabel"
+                                   TextAlignment="Center"></TextBlock>
+                        <ScrollViewer>
+                                <StackPanel Name="armyParentList"></StackPanel>
+                        </ScrollViewer>
+                </StackPanel>
+                <GridSplitter Grid.Column="1" ShowsPreview="False" Width="3"
+                              HorizontalAlignment="Center" VerticalAlignment="Stretch" />
+                <StackPanel Grid.Column="2"
+                            Margin="5"
+                            HorizontalAlignment="Stretch">
+                        <TextBlock Text="Создание объекта армии-потомка"
+                                   Background="Gray"
+                                   TextAlignment="Center"></TextBlock>
+                        <TextBlock TextAlignment="Center">Введите вид войск</TextBlock>
+                        <TextBox Name="armyChildKind" Text=""></TextBox>
+                        <TextBlock TextAlignment="Center">Введите численность войск</TextBlock>
+                        <TextBox Name="armyChildCount" Text=""></TextBox>
+                        <TextBlock TextAlignment="Center">Введите вооруженность войск</TextBlock>
+                        <TextBox Name="armyChildArmament" Text=""></TextBox>
+                        <TextBlock TextAlignment="Center">Введите боевой опыт войск</TextBlock>
+                        <TextBox Name="armyChildExperience" Text=""></TextBox>
+                        <Button Name="createArmyChildBtn"
+                                HorizontalAlignment="Stretch" 
+                                HorizontalContentAlignment="Center"
+                                Click="CreateArmyChildBtn_OnClick">Создать</Button>
+                        <TextBlock Name="childListLabel"
+                                   TextAlignment="Center"></TextBlock>
+                        <ScrollViewer>
+                                <StackPanel Name="childList"></StackPanel>
+                        </ScrollViewer>
+                </StackPanel>
+        </Grid>
+</Window>
