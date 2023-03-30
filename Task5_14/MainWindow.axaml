@@ -2,8 +2,55 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:Width="500" d:Height="800"
         x:Class="Task5_14.MainWindow"
         Title="Task5_14">
-    Welcome to Avalonia!
+        <StackPanel>
+            <Grid>
+                  <Grid.RowDefinitions>
+                      <RowDefinition></RowDefinition>
+                      <RowDefinition></RowDefinition>
+                      <RowDefinition></RowDefinition>
+                      <RowDefinition></RowDefinition>
+                      <RowDefinition></RowDefinition>
+                      <RowDefinition Height="Auto"></RowDefinition>
+                      <RowDefinition Height="Auto"></RowDefinition>
+                      <RowDefinition Height="Auto"></RowDefinition>
+                      <RowDefinition Height="Auto"></RowDefinition>
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*"></ColumnDefinition>
+                      <ColumnDefinition Width="*"></ColumnDefinition>
+                  </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Center" Grid.ColumnSpan="2"
+                       FontWeight="Bold">Создание устройств печати</TextBlock>
+                <TextBlock Grid.Row="1" 
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center">Введите номер устройства:</TextBlock>
+                <TextBox Name="IdBox" Grid.Row="1" Grid.Column="1"></TextBox>
+                <TextBlock Grid.Row="2" 
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center">Введите название устройства:</TextBlock>
+                <TextBox Name="PrinterNameBox" Grid.Row="2" Grid.Column="1"></TextBox>
+                <TextBlock Grid.Row="3" 
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center">Введите количество бумаги:</TextBlock>
+                <TextBox Name="PaperCountBox" Grid.Row="3" Grid.Column="1"></TextBox>
+                <TextBlock Grid.Row="4" 
+                           HorizontalAlignment="Center" 
+                           Grid.ColumnSpan="2">Введите документ для печати:</TextBlock>
+                <TextBox Name="DocumentBox" Grid.Row="5" Grid.RowSpan="3" Grid.ColumnSpan="2"
+                         TextWrapping="Wrap"
+                         AcceptsReturn="True"
+                         Margin="10"></TextBox>
+                <Button Name="CreateDeviceBtn" 
+                        Grid.Row="8" 
+                        Grid.ColumnSpan="2" 
+                        HorizontalAlignment="Center"
+                        Click="CreateDeviceBtn_clicked">Создать устройство печати</Button>
+              </Grid> 
+                <TextBlock HorizontalAlignment="Center" 
+                       FontWeight="Bold">Устройства:</TextBlock>
+            <ListBox Name="DevicesList"></ListBox>
+        </StackPanel>
 </Window>

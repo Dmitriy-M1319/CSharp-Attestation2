@@ -2,7 +2,7 @@ namespace Task5_14;
 
 public interface IPrintingDevice
 {
-    string DriverType { get; set; }
+    int DeviceId { get; set; }
 
     string Print();
     int GetPrintingStatus();
