@@ -49,8 +49,28 @@
                         HorizontalAlignment="Center"
                         Click="CreateDeviceBtn_clicked">Создать устройство печати</Button>
               </Grid> 
-                <TextBlock HorizontalAlignment="Center" 
+            <TextBlock HorizontalAlignment="Center" 
                        FontWeight="Bold">Устройства:</TextBlock>
-            <ListBox Name="DevicesList"></ListBox>
+            <StackPanel Name="DevicesList"></StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Center" Grid.ColumnSpan="2"
+                       FontWeight="Bold">Печать документов</TextBlock>
+                <TextBlock Grid.Row="1" HorizontalAlignment="Center">Введите номер устройства:</TextBlock>
+                <TextBox Grid.Row="1" Grid.Column="1" Name="PrintDeviceIdBox"></TextBox>
+                <Button Name="PrintBtn" 
+                                        Grid.Row="2" 
+                                        Grid.ColumnSpan="2" 
+                                        HorizontalAlignment="Center"
+                                        Click="PrintBtn_onClicked">Печать</Button>
+            </Grid>
         </StackPanel>
 </Window>
